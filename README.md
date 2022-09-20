@@ -1,4 +1,4 @@
-# Automatic Detection of malicious commits in open-source software repositories using Deep Learning. 
+# Automatic detection of malicious commits in open-source software repositories using Deep Learning. 
 ## Objective
 The main objective of this research project would be to detect anomalous and malicious commits in open-source software (OSS) repositories using deep learning algorithm.
 ## Methodology
