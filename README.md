@@ -7,5 +7,9 @@ The tool will analysis the  commit log files and repository metadata, collect re
 The OSS malware dataset would be utilized from the following paper: Gonzalez, Danielle, et al. "Anomalicious: Automated detection of anomalous and potentially malicious commits on github." 2021 IEEE/ACM 43rd International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP). IEEE, 2021.
 ## Language 
 This project would be in Python language.
+## License
+The project is licensed under MIT License (a permissive license with conditions only requiring preservation of copyright and license notices).
+You may see the License at https://github.com/afrin110203/AnomaliesDetectionOSSDL/blob/main/LICENSE
+ 
 
 
