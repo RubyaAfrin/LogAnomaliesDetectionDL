@@ -22,7 +22,9 @@ Before making any significant changes, please open an issue. Each issue should d
 Discussing your proposed changes ahead of time will make the contribution process smooth for everyone. Once the approach is agreed upon, make your changes and open a pull request (PR). To make a PR please follow the guidelines below:
 
 Step 1: Fork the repo and clone the project to your local repository
+
 	* git clone https://github.com/afrin110203/LogAnomaliesDetectionDL.git
+
 Step 2: Make changes to the file, push your repo and make the pull request.
 Step 3: Wait for the review and accept/reject the pull request. 
 
