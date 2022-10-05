@@ -2,7 +2,7 @@
 
 Thanks for your interest in contributing to Log Anomaly Detector. We'd love your help!
 
-Log Anomaly Detector is MIT License and accepts contributions via GitHub pull requests. This document outlines some of the conventions on development workflow, OSS component usage, commit message formatting, and other resources to make it easier to get your contribution accepted. 
+Log Anomaly Detector is under MIT License and accepts contributions via GitHub pull requests. This document outlines some of the conventions on development workflow, OSS component usage, formatting of submit changes, and other resources to make it easier to get your contribution accepted. 
 We gratefully welcome improvements to documentation as well as to code.
 
 
