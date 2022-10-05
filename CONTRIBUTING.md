@@ -1,4 +1,4 @@
-How to Contribute to Log Anomaly Detector
+# How to Contribute to Log Anomaly Detector
 
 Thanks for your interest in contributing to Log Anomaly Detector. We'd love your help!
 
