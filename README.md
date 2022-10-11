@@ -12,7 +12,7 @@ The project is licensed under MIT License (a permissive license with conditions 
 You may see the License at https://github.com/afrin110203/AnomaliesDetectionOSSDL/blob/main/LICENSE
 ## Contributing
 We greatly appreciate any contribution to this project. Before creating a new issue or pull request, 
-please read the contribution guidelines and policies in [CONTRIBUTING] (https://github.com/afrin110203/LogAnomaliesDetectionDL/blob/main/CONTRIBUTING.md) file.
+please read the contribution guidelines and policies in [CONTRIBUTING](https://github.com/afrin110203/LogAnomaliesDetectionDL/blob/main/CONTRIBUTING.md)file.
  
 
 
