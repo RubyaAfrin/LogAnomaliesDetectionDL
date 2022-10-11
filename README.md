@@ -9,10 +9,10 @@ The log file dataset would be utilized from the following paper: Guo, Haixuan, S
 This project would be in Python language.
 ## License
 The project is licensed under MIT License (a permissive license with conditions only requiring preservation of copyright and license notices).
-You may see the License at https://github.com/afrin110203/AnomaliesDetectionOSSDL/blob/main/LICENSE
+You may see the License at [LICENSE] (https://github.com/afrin110203/AnomaliesDetectionOSSDL/blob/main/LICENSE)
 ## Contributing
 We greatly appreciate any contribution to this project. Before creating a new issue or pull request, 
-please read the contribution guidelines and policies in [CONTRIBUTING](https://github.com/afrin110203/LogAnomaliesDetectionDL/blob/main/CONTRIBUTING.md)file.
+please read the contribution guidelines and policies in [CONTRIBUTING](https://github.com/afrin110203/LogAnomaliesDetectionDL/blob/main/CONTRIBUTING.md) file.
  
 
 
