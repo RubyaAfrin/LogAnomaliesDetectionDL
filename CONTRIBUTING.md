@@ -32,7 +32,7 @@ Step 3: Wait for the review and accept/reject the pull request.
 ### How to report bug 
 Once you have identified a bug, you first read the [creating an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) to learn the issue creation process.
 
-#### Overview/Description of a bug report
+##### Overview/Description of a bug report
 The overview or description of a bug report should have the following:
                    *Abstracted summary of behavior (e.g. interpretation of test failures)
                    *Justifications of why this is a bug
@@ -40,11 +40,11 @@ The overview or description of a bug report should have the following:
                    *Interpretation of the spec
                    *Information on other implemention
 
-#### Steps to reproduce
+##### Steps to reproduce
 The goal of reproducible steps is to deliver the knowledge to recreate the bug on our own system.
-#### Test Results
+##### Test Results
 The test results, including Expected Result and Actual Result, will show the developer what's wrong. Expected Result describes what should have happened, and Actual Result describes what actually happened.
-#### Environment Setup and Configuration
+##### Environment Setup and Configuration
 Please also include the environment setup and configuration information, such as OS, system build and platform etc.
 ##### Any additional Information
 Include any additional information such as URL, crash data, regression range etc. Attach all relevant files
