@@ -3,11 +3,7 @@
 
 # =============================================================================
 """ 
-This file implements the regular expression based algorithm for log 
-template matching. The algorithm is described in the following paper:
-
-[1] Jieming Zhu, Jingyang Liu, Pinjia He, Zibin Zheng, Michael R. Lyu. 
-    "Real-Time Log Event Matching at Scale", XXX, 2018.
+This file implements the regular expression based algorithm for log parsing. 
 """
 
 from ..utils import logloader
