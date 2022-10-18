@@ -6,8 +6,9 @@
 This file implements the regular expression based algorithm for log parsing. 
 """
 
-from ..utils import logloader
+
 from collections import defaultdict, Counter, OrderedDict
+import logloader
 import re
 import pandas as pd
 import os
