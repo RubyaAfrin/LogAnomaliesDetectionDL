@@ -47,7 +47,6 @@ class PatternMatch(object):
         regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', template)
         regex = regex.replace('\<\*\>', '(.*?)')
         regex = regex.replace('\<NUM\>', '(([\-|\+]?\d+)|(0[Xx][a-fA-F\d]+))')
-        regex = regex.replace('\<IP\>', '((\d+\.){3}\d+)')
         regex = '^' + regex + '$'
         return regex
 
