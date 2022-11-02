@@ -44,9 +44,6 @@ class PatternMatch(object):
 
     def _generate_template_regex(self, template):
         template = re.sub(r'(<\*>\s?){2,}', '<*>', template)
-        regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', template)
-        regex = regex.replace('\<\*\>', '(.*?)')
-        regex = regex.replace('\<NUM\>', '(([\-|\+]?\d+)|(0[Xx][a-fA-F\d]+))')
         regex = '^' + regex + '$'
         return regex
 
