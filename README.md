@@ -21,18 +21,20 @@ If you want to run this project on your local machine, please the following step
 OR
 * Use docker to run the scripts by following these steps:
 
-Step 1: Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
-Step 2: Clone the repository of the project.
-3. Step 3: Open the pc terminal and go tho folder of the cloned repository.
-4. Step 4: Run this command
+1. Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
+2. Clone the repository of the project.
+3. Open the pc terminal and go tho folder of the cloned repository.
+4. Run this command
 ```
 docker build --no-cache -t logparsing .
 ```
-Step 5: Go to the docker app, select the image tab and find logparsing image and then start it.
-Step 6: Go to containers tab, open terminal from the running container.
-Step 7: Run following commands:
- a> cd ./Source code
- a> python main.py
+5. Go to the docker app, select the image tab and find logparsing image and then start it.
+6. Go to containers tab, open terminal from the running container.
+7. Run following commands:
+```
+cd ./Source code
+python main.py
+```
 The code will start running and you can see the output in the Source code/logmatch_result directory 
 
 
