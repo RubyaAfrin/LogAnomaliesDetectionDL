@@ -19,7 +19,9 @@ please read the contribution guidelines and policies in [CONTRIBUTING](https://g
 * Download/Clone the repository and run the python file from ' Source code' folder in your local machine. 
 OR
 * Use docker to run the scripts by following these steps:
+
 Step 1: Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
+
 Step 2: Clone the repository of the project.
 Step 3: Open the pc terminal and go tho folder of the cloned repository.
 Step 4: Run this command
