@@ -1,6 +1,8 @@
+import sys
+sys.path.append('../')
 import log_parsing
 
-input_dir = 'input_data' # The input directory
+input_dir    = '../Dataset/HDFS/' # The input directory
 output_dir = 'logparse_result/' # The result directory
 log_filepath = input_dir + 'HDFS_2k.log' # The input log file path
 log_format = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS log format
