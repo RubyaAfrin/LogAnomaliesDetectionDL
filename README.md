@@ -15,13 +15,14 @@ We greatly appreciate any contribution to this project. Before creating a new is
 please read the contribution guidelines and policies in [CONTRIBUTING](https://github.com/afrin110203/LogAnomaliesDetectionDL/blob/main/CONTRIBUTING.md) file.
  
 ## How to run
+If you want to run this project on your local machine, please the following steps:
 
 * Download/Clone the repository and run the python file from ' Source code' folder in your local machine. 
 OR
 * Use docker to run the scripts by following these steps:
 
-1. Step 1: Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
-2. Step 2: Clone the repository of the project.
+Step 1: Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
+Step 2: Clone the repository of the project.
 3. Step 3: Open the pc terminal and go tho folder of the cloned repository.
 4. Step 4: Run this command
 ```
