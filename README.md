@@ -20,12 +20,13 @@ please read the contribution guidelines and policies in [CONTRIBUTING](https://g
 OR
 * Use docker to run the scripts by following these steps:
 
-Step 1: Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
-
-Step 2: Clone the repository of the project.
-Step 3: Open the pc terminal and go tho folder of the cloned repository.
-Step 4: Run this command
-`docker build --no-cache -t logparsing .
+1. Step 1: Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
+2. Step 2: Clone the repository of the project.
+3. Step 3: Open the pc terminal and go tho folder of the cloned repository.
+4. Step 4: Run this command
+```
+docker build --no-cache -t logparsing .
+```
 Step 5: Go to the docker app, select the image tab and find logparsing image and then start it.
 Step 6: Go to containers tab, open terminal from the running container.
 Step 7: Run following commands:
