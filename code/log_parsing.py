@@ -95,6 +95,7 @@ class PatternMatch(object):
                               self.template_freq_dict.iteritems()]
         template_freq_df = pd.DataFrame(template_freq_list, columns=['EventId', 'EventTemplate', 'Occurrences'])
         template_freq_df.to_csv(os.path.join(self.outdir, log_filename + '_templates.csv'), index=False)
+        print (template_freq_df)
 
     def _generate_hash_eventId(self, template_str):
         return hashlib.md5(template_str.encode('utf-8')).hexdigest()[0:8]
