@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 
 
 # copy the content of the local source directory to the working directory
-COPY Source code/ ./Source code/
+COPY code/ ./code/
 
 # copy the content of the local data directory to the working directory
 COPY Dataset/ ./Dataset/
