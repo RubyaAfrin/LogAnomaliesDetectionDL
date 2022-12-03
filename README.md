@@ -32,7 +32,7 @@ docker build --no-cache -t logparsing .
 6. Go to containers tab, open terminal from the running container.
 7. Run following commands:
 ```
-cd ./Source code
+cd ./code
 python main.py
 ```
 The code will start running and you can see the output in the Source code/logmatch_result directory 
