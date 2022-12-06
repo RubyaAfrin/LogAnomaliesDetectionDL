@@ -35,6 +35,6 @@ docker build --no-cache -t logparsing .
 cd ./code
 python main.py
 ```
-The code will start running and you can see the output in the Source code/logmatch_result directory 
+The code will start running and you can see the output in the console and code/logmatch_result directory 
 
 
