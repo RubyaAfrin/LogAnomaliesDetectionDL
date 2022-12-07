@@ -1,4 +1,8 @@
-
+"""
+Description : This file implements the function to evaluation accuracy of log parsing
+Author      : Rubya Afrin
+License     : MIT
+"""
 
 import sys
 import pandas as pd
