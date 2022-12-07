@@ -4,7 +4,13 @@ import sys
 sys.path.append('../')
 import log_parsing
 
-input_dir    = '../Dataset/HDFS/' # The input directory
+# test for file input directory
+try:
+    input_dir = '../Dataset/HDFS/'  # The input directory
+except OSError as e:
+    print("No input file has been found")
+    
+
 output_dir   = 'logmatch_result/' # The result directory
 log_filepath = input_dir + 'HDFS_2k.log' # The input log file path
 log_format   = '<Date> <Time> <Pid> <Level> <Component>: <Content>' # HDFS log format
