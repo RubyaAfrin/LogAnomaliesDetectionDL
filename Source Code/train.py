@@ -1,3 +1,7 @@
+
+
+#  Copyright Rubya Afrin, 2022 Licensed under MIT License.
+#  See the LICENSE.txt for more information.
 import numpy as np
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Bidirectional, Masking
