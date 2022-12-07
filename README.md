@@ -30,8 +30,7 @@ OR
 * Use docker to run the scripts by following these steps:
 
 1. Install [docker desktop](https://www.docker.com/get-started/) compatible with your machine.
-2. Clone the repository of the project.
-3. Open the pc terminal and go tho folder of the cloned repository.
+2. Clone the repository of the project and go tho folder of the cloned repository see details [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)).
 4. Run this command
 ```
 docker build --no-cache -t logparsing .
