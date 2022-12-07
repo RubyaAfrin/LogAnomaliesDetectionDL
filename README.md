@@ -12,7 +12,7 @@ The main objectives of this research project would have two phases:
 ## Methodology
 The tool will analysis the system log files, apply NLP tool for parsing data and classify the anomaly event. Both rule-based and deep learning algorithm would be considered for best decision model.
 ## Dataset
-The log file dataset would be utilized from the rom the largest log repository in [loghub](https://github.com/logpai/loghub) following paper: Zhu, Jieming, et al. "Tools and benchmarks for automated log parsing." 2019 IEEE/ACM 41st International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP). IEEE, 2019.
+The log file dataset would be utilized from the largest log repository in [loghub](https://github.com/logpai/loghub) following paper: Zhu, Jieming, et al. "Tools and benchmarks for automated log parsing." 2019 IEEE/ACM 41st International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP).
 ## Language 
 This project would be in Python language. 
 ## License
@@ -22,7 +22,7 @@ You may see the License at [LICENSE](https://github.com/afrin110203/LogAnomalies
 We greatly appreciate any contribution to this project. Before creating a new issue or pull request, 
 please read the contribution guidelines and policies in [CONTRIBUTING](https://github.com/afrin110203/LogAnomaliesDetectionDL/blob/main/CONTRIBUTING.md) file.
  
-## Running Guidelines
+## How to run on your pc 
 If you want to run this project on your local machine, please do the following steps:
 
 * Download/Clone the repository and run the python file from 'code' folder in your local machine. 
