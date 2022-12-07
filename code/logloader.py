@@ -25,8 +25,13 @@ class LogLoader(object):
         """
         print('Loading log messages to dataframe...')
         lines = []
-        with open(log_filepath, 'r') as fid:
-            lines = fid.readlines()
+        
+        # test for reading file
+        try:
+            with open(log_filepath, 'r') as fid:
+                lines = fid.readlines()
+        except OSError as e:
+            print ("File is not found")
         
         log_messages = []
         if self.n_workers == 1: 
