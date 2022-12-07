@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#  Copyright Rubya Afrin, 2022 Licensed under MIT License.
+#  See the LICENSE.txt for more information.
 import sys
 sys.path.append('../')
 import log_parsing
