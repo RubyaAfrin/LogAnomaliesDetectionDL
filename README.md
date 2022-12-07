@@ -1,6 +1,6 @@
 # Automatic detection of log anomalies from system log file using Deep Learning. 
 
-## Create a structured log template and detect anomalies events.
+### Create a structured log template and detect anomalies events.
 <img width="886" alt="image" src="https://user-images.githubusercontent.com/7861918/206095441-8390d1ac-01fd-41ca-813c-71b8e69f7c16.png">
 
                                  Fig: An illustration of log anomalies detection technique
