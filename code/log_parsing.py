@@ -14,6 +14,7 @@ import multiprocessing as mp
 import itertools
 import hashlib
 import numpy as np
+import functools
 
 
 class PatternMatch(object):
@@ -44,6 +45,8 @@ class PatternMatch(object):
             event_Id = self._generate_hash_eventId(event_template)
         if self.optimized:
             start_token = event_template.split(' ')[0]
+            
+            # test for searching the variable
             if re.search(r'<.*?>', start_token):
                 start_token = '<*>' # this token used for indicating variable data
             self.template_match_dict[start_token][self._generate_template_regex(event_template)] = (event_Id, event_template)
@@ -55,11 +58,21 @@ class PatternMatch(object):
         Function to generate regular expression to split log messages
                   """
         template = re.sub(r'(<\*>\s?){2,}', '<*>', template)
+        template_array_list = re.sub(r'(<*>)','',template)
         regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', template)
         regex = regex.replace('\<\*\>', '(.*?)'). # replace url
         regex = regex.replace('\<NUM\>', '(([\-|\+]?\d+)|(0[Xx][a-fA-F\d]+))') # replace character and digit
         regex = regex.replace('\<IP\>', '((\d+\.){3}\d+)') # replace IP address
         regex = '^' + regex + '$'
+        
+         # test
+        try:
+            # converting to string
+            str(template_array_list)
+        except ValueError:
+            template_array_list= False
+            if template_array_list:
+                print("Template array is initialized")
         return regex
 
     def match_event(self, event_list):
@@ -83,6 +96,10 @@ class PatternMatch(object):
             self.template_freq_dict[event] += 1
             paras.append(parameter_list) # add each parameter to the list
             match_list.append(event) # add each event to the list
+            
+         # test 
+        if functools.reduce(lambda i, j : i and j, map(lambda m, k: m == k, match_list, paras), True) :
+            print("Parameter are matched with variable list")
         return match_list, paras
 
     def read_template_from_csv(self, template_filepath):
@@ -94,6 +111,12 @@ class PatternMatch(object):
             event_Id = row['EventId']
             event_template = row['EventTemplate']
             self.add_event_template(event_template, event_Id)
+            
+             # test 
+            try:
+                template_dataframe = pd.read_csv(template_filepath)
+            except OSError as e:
+                print("can not convert to csv")
 
     def match(self, log_filepath, template_filepath):
         """
@@ -168,6 +191,8 @@ def regex_match(msg, template_match_dict, optimized):
                                                 key=lambda x: (len(x[1][1]), -x[1][1].count('<*>')), reverse=True))
             for regex, event in match_dict.iteritems():
                 parameter_list = re.findall(regex, msg.strip())
+                
+                # test
                 if parameter_list:
                     matched_event = event
                     break
@@ -182,10 +207,12 @@ def regex_match(msg, template_match_dict, optimized):
                                             key=lambda x: (len(x[1][1]), -x[1][1].count('<*>')), reverse=True))
         for regex, event in match_dict.iteritems():
             parameter_list = re.findall(regex, msg.strip())
+            
+            # test
             if parameter_list:
                 matched_event = event
                 break
-
+    # test
     if not matched_event:
         matched_event = ('NONE', 'NONE')
     if parameter_list:
