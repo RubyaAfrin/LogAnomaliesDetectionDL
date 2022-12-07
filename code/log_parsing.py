@@ -1,5 +1,9 @@
 
-
+"""
+Description : This file implements the technique of log parsing
+Author      : Rubya Afrin
+License     : MIT
+"""
 import logloader
 from collections import defaultdict, Counter, OrderedDict
 import re
@@ -16,6 +20,13 @@ class PatternMatch(object):
 
     def __init__(self, outdir='./result/', n_workers=1, optimized=False, logformat=None):
         # type: (object, object, object, object) -> object
+         """
+                Attributes
+                ----------
+                    n_workers : The number of workers in parallel
+                    logformat : the format of the input log file
+                    outdir : the output directory stores the file containing structured logs
+                """
         self.outdir = outdir
         if not os.path.exists(outdir):
             os.makedirs(outdir)  # Make the result directory
@@ -26,6 +37,9 @@ class PatternMatch(object):
         self.optimized = optimized
 
     def add_event_template(self, event_template, event_Id=None):
+        """
+                Function to generate event  template with event ID
+                          """
         if not event_Id:
             event_Id = self._generate_hash_eventId(event_template)
         if self.optimized:
@@ -38,21 +52,27 @@ class PatternMatch(object):
             self.template_match_dict[self._generate_template_regex(event_template)] = (event_Id, event_template)
 
     def _generate_template_regex(self, template):
+        """
+        Function to generate regular expression to split log messages
+                  """
         template = re.sub(r'(<\*>\s?){2,}', '<*>', template)
         regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', template)
-        regex = regex.replace('\<\*\>', '(.*?)')
-        regex = regex.replace('\<NUM\>', '(([\-|\+]?\d+)|(0[Xx][a-fA-F\d]+))')
-        regex = regex.replace('\<IP\>', '((\d+\.){3}\d+)')
+        regex = regex.replace('\<\*\>', '(.*?)'). # replace url
+        regex = regex.replace('\<NUM\>', '(([\-|\+]?\d+)|(0[Xx][a-fA-F\d]+))') # replace character and digit
+        regex = regex.replace('\<IP\>', '((\d+\.){3}\d+)') # replace IP address
         regex = '^' + regex + '$'
         return regex
 
     def match_event(self, event_list):
+         """
+                Function to match the event with the structured event type given
+                          """
         match_list = []
         paras = []
         if self.n_workers == 1:
             results = match_fn(event_list, self.template_match_dict, self.optimized)
         else:
-            pool = mp.Pool(processes=self.n_workers)
+            pool = mp.Pool(processes=self.n_workers) # intiate pool
             chunk_size = len(event_list) / self.n_workers + 1
             result_chunks = [pool.apply_async(match_fn, args=(
             event_list[i:i + chunk_size], self.template_match_dict, self.optimized)) \
@@ -62,11 +82,14 @@ class PatternMatch(object):
             results = list(itertools.chain(*[result.get() for result in result_chunks]))
         for event, parameter_list in results:
             self.template_freq_dict[event] += 1
-            paras.append(parameter_list)
-            match_list.append(event)
+            paras.append(parameter_list) # add each parameter to the list
+            match_list.append(event) # add. each event to the list
         return match_list, paras
 
     def read_template_from_csv(self, template_filepath):
+                """
+        Function to read the structured csv template file
+                                  """
         template_dataframe = pd.read_csv(template_filepath)
         for idx, row in template_dataframe.iterrows():
             event_Id = row['EventId']
@@ -74,8 +97,11 @@ class PatternMatch(object):
             self.add_event_template(event_template, event_Id)
 
     def match(self, log_filepath, template_filepath):
+        """
+        Function to match the event template with the structured event template given
+                                 """
         print('Processing log file: {}'.format(log_filepath))
-        start_time = datetime.now()
+        start_time = datetime.now() #strat calculating time
         loader = logloader.LogLoader(self.logformat, self.n_workers)
         self.read_template_from_csv(template_filepath)
         log_dataframe = loader.load_to_dataframe(log_filepath)
@@ -85,11 +111,14 @@ class PatternMatch(object):
                                   axis=1)
         log_dataframe['ParameterList'] = paras
         self._dump_match_result(os.path.basename(log_filepath), log_dataframe)
-        match_rate = sum(log_dataframe['EventId'] != 'NONE') / float(len(log_dataframe))
+        match_rate = sum(log_dataframe['EventId'] != 'NONE') / float(len(log_dataframe)) # calculate matching accuracy
         print('Matching done, matching rate: {:.1%} [Time taken: {!s}]'.format(match_rate, datetime.now() - start_time))
         return log_dataframe
 
     def _dump_match_result(self, log_filename, log_dataframe):
+             """
+              Function to convert the output file to csv format
+                                       """
         log_dataframe.to_csv(os.path.join(self.outdir, log_filename + '_structured.csv'), index=False)
         template_freq_list = [[eventId, template, freq] for (eventId, template), freq in
                               self.template_freq_dict.iteritems()]
@@ -101,6 +130,9 @@ class PatternMatch(object):
         return hashlib.md5(template_str.encode('utf-8')).hexdigest()[0:8]
 
     def _get_parameter_list(self, row):
+          """
+              Function to store the  parameter (variable data) from the event template
+                                       """
         template_regex = re.sub(r'([^A-Za-z0-9])', r'\\\1', row["EventTemplate"])
         template_regex = "^" + template_regex.replace("\<\*\>", "(.*?)") + "$"
         parameter_list = re.findall(template_regex, row["Content"])
