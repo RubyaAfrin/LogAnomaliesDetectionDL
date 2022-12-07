@@ -1,4 +1,6 @@
 
+#  Copyright Rubya Afrin, 2022 Licensed under MIT License.
+#  See the LICENSE.txt for more information.
 import sys
 import pandas as pd
 import re
