@@ -2,7 +2,7 @@
 
 Logs contain rich runtime information for troubleshooting purposes such as anomalies. Since logs are unstructured and often enormous in size, a typical log-based anomaly detection requires parsing logs into structured format first. This project is about finding an efficient technique both for parsing the log data and detecting anomalies using Deep Learning algorithm.
 
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/7861918/206325971-12f89829-4241-411c-9962-fcd2a5899147.png"><img width="350" alt="image" src="https://user-images.githubusercontent.com/7861918/206095441-8390d1ac-01fd-41ca-813c-71b8e69f7c16.png">
+<img width="350" alt="image" src="https://user-images.githubusercontent.com/7861918/206325971-12f89829-4241-411c-9962-fcd2a5899147.png"><img width="450" alt="image" src="https://user-images.githubusercontent.com/7861918/206095441-8390d1ac-01fd-41ca-813c-71b8e69f7c16.png">
 
                         Fig: An illustration of log parsing and anomalies detection technique
 ## Objective
